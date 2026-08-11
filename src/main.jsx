@@ -14,13 +14,62 @@ import {
 import "./styles.css";
 
 const TRACKS = [
-  { id: 1, title: "Midnight Drive", artist: "Pulse Sessions", src: "/audio/track-01.mp3", accent: "01" },
-  { id: 2, title: "Neon Skies", artist: "Pulse Sessions", src: "/audio/track-02.mp3", accent: "02" },
-  { id: 3, title: "Ocean Lights", artist: "Pulse Sessions", src: "/audio/track-03.mp3", accent: "03" },
-  { id: 4, title: "Afterglow", artist: "Pulse Sessions", src: "/audio/track-04.mp3", accent: "04" },
-  { id: 5, title: "City Echoes", artist: "Pulse Sessions", src: "/audio/track-05.mp3", accent: "05" },
-  { id: 6, title: "Slow Motion", artist: "Pulse Sessions", src: "/audio/track-06.mp3", accent: "06" },
-  { id: 7, title: "Golden Hour", artist: "Pulse Sessions", src: "/audio/track-07.mp3", accent: "07" }
+  {
+    id: 1,
+    title: "Midnight Drive",
+    artist: "Pulse Sessions",
+    src: "/audio/track-01.mp3",
+    cover: "/covers/cover-01.jpeg",
+    accent: "01"
+  },
+  {
+    id: 2,
+    title: "Neon Skies",
+    artist: "Pulse Sessions",
+    src: "/audio/track-02.mp3",
+    cover: "/covers/cover-02.jpeg",
+    accent: "02"
+  },
+  {
+    id: 3,
+    title: "Ocean Lights",
+    artist: "Pulse Sessions",
+    src: "/audio/track-03.mp3",
+    cover: "/covers/cover-03.jpg",
+    accent: "03"
+  },
+  {
+    id: 4,
+    title: "Afterglow",
+    artist: "Pulse Sessions",
+    src: "/audio/track-04.mp3",
+    cover: "/covers/cover-04.jpeg",
+    accent: "04"
+  },
+  {
+    id: 5,
+    title: "City Echoes",
+    artist: "Pulse Sessions",
+    src: "/audio/track-05.mp3",
+    cover: "/covers/cover-05.jpg",
+    accent: "05"
+  },
+  {
+    id: 6,
+    title: "Slow Motion",
+    artist: "Pulse Sessions",
+    src: "/audio/track-06.mp3",
+    cover: "/covers/cover-06.jpg",
+    accent: "06"
+  },
+  {
+    id: 7,
+    title: "Golden Hour",
+    artist: "Pulse Sessions",
+    src: "/audio/track-07.mp3",
+    cover: "/covers/cover-07.jpeg",
+    accent: "07"
+  }
 ];
 
 function formatTime(value) {
@@ -32,9 +81,11 @@ function formatTime(value) {
 
 function TrackArtwork({ track, large = false }) {
   return (
-    <div className={`artwork ${large ? "artwork-large" : ""}`} aria-hidden="true">
-      <span>{track.accent}</span>
-      <div className="artwork-orb" />
+    <div className={`artwork ${large ? "artwork-large" : ""}`}>
+      <img
+        src={track.cover}
+        alt={`${track.title} cover`}
+      />
     </div>
   );
 }
@@ -132,7 +183,7 @@ function Playlist({ tracks, currentTrackId, onSelect }) {
 function Player({ tracks }) {
   const audioRef = useRef(null);
   const isSeekingRef = useRef(false);
-  
+
   const [trackIndex, setTrackIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
