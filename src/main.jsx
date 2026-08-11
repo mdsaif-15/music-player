@@ -52,7 +52,6 @@ function ProgressBar({ currentTime, duration, isSeeking, setIsSeeking, onSeek })
     onSeek(Number(event.currentTarget.value), true);
     setIsSeeking(false);
   };
-
   return (
     <div className="progress-wrap">
       <input
@@ -369,5 +368,4 @@ function Player({ tracks }) {
 function App() {
   return <Player tracks={TRACKS} />;
 }
-
 createRoot(document.getElementById("root")).render(<App />);
