@@ -97,10 +97,12 @@ function Playlist({ tracks, currentTrackId, onSelect }) {
   return (
     <aside className="playlist-panel">
       <div className="section-heading">
+
         <div>
           <span className="eyebrow">Your queue</span>
           <h2>Playlist</h2>
         </div>
+        
         <span className="track-count">{tracks.length} tracks</span>
       </div>
 
