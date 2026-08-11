@@ -97,12 +97,10 @@ function Playlist({ tracks, currentTrackId, onSelect }) {
   return (
     <aside className="playlist-panel">
       <div className="section-heading">
-
         <div>
           <span className="eyebrow">Your queue</span>
           <h2>Playlist</h2>
         </div>
-        
         <span className="track-count">{tracks.length} tracks</span>
       </div>
 
@@ -134,7 +132,7 @@ function Playlist({ tracks, currentTrackId, onSelect }) {
 function Player({ tracks }) {
   const audioRef = useRef(null);
   const isSeekingRef = useRef(false);
-
+  
   const [trackIndex, setTrackIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);

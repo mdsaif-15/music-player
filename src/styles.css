@@ -446,6 +446,7 @@ input:focus-visible {
   align-items: center;
   gap: 5px;
 }
+
 @media (max-width: 850px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -464,6 +465,7 @@ input:focus-visible {
     display: none;
   }
 }
+
 @media (max-width: 520px) {
   .app-shell {
     width: min(100% - 20px, 1180px);
