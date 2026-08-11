@@ -368,4 +368,5 @@ function Player({ tracks }) {
 function App() {
   return <Player tracks={TRACKS} />;
 }
+
 createRoot(document.getElementById("root")).render(<App />);
